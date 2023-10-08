@@ -15,9 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_122830) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.string "status"
-    t.string "game_type"
-    t.string "name"
+    t.string "status", null: false
+    t.string "game_type", null: false
+    t.string "name", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_122830) do
   end
 
   create_table "kills", force: :cascade do |t|
-    t.integer "target_code"
+    t.integer "target_code", null: false
     t.boolean "executed", default: false
     t.datetime "finish_at"
     t.bigint "player_id", null: false
@@ -37,17 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_122830) do
   end
 
   create_table "missions", force: :cascade do |t|
-    t.string "description"
+    t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
     t.integer "player_code"
-    t.string "status"
-    t.string "player_type"
+    t.string "status", null: false
+    t.string "player_type", null: false
     t.bigint "game_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false

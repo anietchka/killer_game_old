@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :mission do
-    description { "MyString" }
+    description { "Lui faire porter un toast" }
   end
 end
